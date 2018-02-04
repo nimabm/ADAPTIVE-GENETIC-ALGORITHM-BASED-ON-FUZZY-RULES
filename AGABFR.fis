@@ -1,0 +1,41 @@
+[System]
+Name='AGABFR1'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=2
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='diversity'
+Range=[0 15]
+NumMFs=3
+MF1='low':'trapmf',[-5.4 -0.6 0.5971 5.375]
+MF2='med':'trapmf',[4.26 7.14 10.46 13.71]
+MF3='high':'trapmf',[13.23 14.4 15.6 20.4]
+
+[Output1]
+Name='dPm'
+Range=[-0.1 0.1]
+NumMFs=3
+MF1='N':'trapmf',[-0.172 -0.108 -0.092 -0.02038]
+MF2='Z':'trapmf',[-0.0416 -0.0086 0.0198 0.05]
+MF3='P':'trapmf',[0.03942 0.0854 0.108 0.172]
+
+[Output2]
+Name='dPc'
+Range=[-0.1 0.1]
+NumMFs=3
+MF1='N':'trapmf',[-0.172 -0.108 -0.092 -0.02038]
+MF2='Z':'trapmf',[-0.0404 -0.008 0.0135 0.059]
+MF3='P':'trapmf',[0.04048 0.092 0.108 0.172]
+
+[Rules]
+1, 1 3 (1) : 1
+2, 2 2 (1) : 1
+3, 3 1 (1) : 1
